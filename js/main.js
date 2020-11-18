@@ -55,7 +55,7 @@ function dataToSheet(form, url){
 phone.forEach(el=> {
   let iti = window.intlTelInput(el, {
     preferredCountries: ['pr'],
-    utilsScript: '../node_modules/intl-tel-input/build/js/utils.js',
+    utilsScript: './node_modules/intl-tel-input/build/js/utils.js',
     initialCountry: "auto",
     geoIpLookup: function(success, failure) {
       $.get("https://ipinfo.io/json", function() {}, "jsonp").always(function(resp) {
@@ -115,26 +115,45 @@ function sendEmail(a, email) {
 }
 // END EMAIL
 
-// PDF
+// BEGIN PDF
 
 function createPDF(name){
   // You'll need to make your image into a Data URL
-// Use http://dataurl.net/#dataurlmaker
-let imgData;
-fetch('./certificado.txt').then(data => data.text())
-.then(data => imgData = data);
-let date = new Date();
-let day = date.getDate();
-let mounth = date.getMonth();
-let year = date.getFullYear();
-var doc = new jsPDF({
-    orientation: 'l',
-})
-doc.addFont("Helvetica", "Helvetica", "normal")
-doc.setFontSize(30);
-doc.addImage(imgData, 'JPEG', 2, 0, 0, 210);
-doc.text(30, 139, name);
-// doc.save('certificado.pdf');
+  // Use http://dataurl.net/#dataurlmaker
+  fetch('./js/certificado.txt').then(data => data.text())
+  .then(data => {
+    let imgData;
+    imgData = data
+    let date = new Date();
+    let day = String(date.getDate());
+    let mounth = String(date.getMonth());
+    let year = String(date.getFullYear());
+    var doc = new jsPDF({
+        orientation: 'l',
+    })
+    doc.addFont("Helvetica", "Helvetica", "normal")
+    doc.setFontSize(30);
+    doc.addImage(imgData, 'JPEG', 2, 0, 0, 210);
+    doc.text(30, 139, name);
+    doc.setFontSize(11);
+    doc.text(107, 153, day);
+    doc.text(122, 153, mounth);
+    doc.text(140, 153, year);
+    doc.save('certificado.pdf');
+  });
+}
+// END PDF
+// BEGIN Message
+function message(form) {
+  let html = `
+  <div class="card text-white bg-success text-center py-5">
+    <div class="card-body">
+      <h2 class="card-title font-weight-bold">¡Muchas Gracias!</h2>
+      <p class="card-text">Sus datos serán validados lo más pronto posible, ¡estamos en contacto!</p>
+    </div>
+  </div>
+  `;
+  form.innerHTML = html;
 }
 
 // BEGIN Bootstrap Validación
@@ -142,7 +161,8 @@ let forms = document.getElementsByClassName('needs-validation');
 // Loop over them and prevent submission
 let validation = Array.prototype.filter.call(forms, function(form) {
   form.addEventListener('submit', function(e) {
-    if (form.checkValidity() === false) {
+    let f = formToJson(form);
+    if ((form.checkValidity() === false) || (f.phone === f.altphone)) {
       e.preventDefault();
       e.stopPropagation();
       clearPhone(phone);
@@ -152,9 +172,11 @@ let validation = Array.prototype.filter.call(forms, function(form) {
       let sheet = dataToSheet(form, scriptURL);
       sendEmail(form, 'worldsolarpropr@gmail.com');
       sendEmail(form, 'creditpoints720@worldsolarpro.com');
+      let name = `${f.name} ${f.lastname}`;
+      createPDF(name);
+      message(form)
     }
     form.classList.add('was-validated');
-    createPDF("Miguel Peña");
   }, false);
 });
 // END Bootstrap Validación

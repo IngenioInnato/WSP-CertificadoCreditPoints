@@ -6,6 +6,10 @@
 
 .iti{
   width: 100%;
+  color: #000;
+  z-index: 9999;
 }
 .iti__arrow { border: none; }
-
+body{
+    background: linear-gradient(45deg, var(--cyan), var(--blue));
+}
