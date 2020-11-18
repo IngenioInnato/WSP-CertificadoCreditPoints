@@ -24,9 +24,12 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^4.5.3",
+    "formdata-polyfill": "^3.0.20",
     "intl-tel-input": "^17.0.8",
     "jquery": "^3.5.1",
     "jspdf": "^2.1.1",
-    "vue": "^2.6.12"
+    "promise-polyfill": "^8.2.0",
+    "vue": "^2.6.12",
+    "whatwg-fetch": "^3.5.0"
   }
 }

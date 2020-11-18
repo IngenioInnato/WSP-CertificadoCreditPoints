@@ -1,74 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163302356-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-163302356-1');
-    </script>
-    <!-- Facebook Pixel Code -->
-    <script>
-      ! function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-      }(window, document, 'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '338792673638644');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=338792673638644&ev=PageView&noscript=1"
-  /></noscript>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163302356-1"></script>
+  <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-163302356-1");</script>
+  <!-- Facebook Pixel Code -->
+  <script>!function (e, t, n, c, o, a, f) { e.fbq || (o = e.fbq = function () { o.callMethod ? o.callMethod.apply(o, arguments) : o.queue.push(arguments) }, e._fbq || (e._fbq = o), o.push = o, o.loaded = !0, o.version = "2.0", o.queue = [], (a = t.createElement(n)).async = !0, a.src = "https://connect.facebook.net/en_US/fbevents.js", (f = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, f)) }(window, document, "script"), fbq("init", "338792673638644"), fbq("track", "PageView");</script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=338792673638644&ev=PageView&noscript=1" /></noscript>
   <title>Credit Points $720 | WORLD SOLAR PRO US</title>
-  <link rel="shortcut icon" href="" type="image/png">
+  <link rel="shortcut icon" href="./img/logo/isotipo.png" type="image/png">
   <meta name="robots" content="index, follow">
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="WORLD SOLAR PRO US">
   <meta name="copyright" content="WORLD SOLAR PRO US" />
-  <meta name="image" content="">
-
+  <meta name="image" content="./img/logo/logo-dark.png">
   <!--  Essential META Tags -->
-  <meta property="og:title" content="WORLD SOLAR PRO US">
+  <meta property="og:title" content="Credit Points $720 | WORLD SOLAR PRO US">
   <meta property="og:description" content="">
   <meta property="og:image" content="">
   <!--  Non-Essential, But Recommended -->
   <meta property="og:site_name" content="WORLD SOLAR PRO US">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://worldsolarprous.com/credit-points">
+  <meta property="og:url" content="https://worldsolarprous.com/creditpoints">
   <meta property="og:title" content="Credit Points $720 | WORLD SOLAR PRO US">
   <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="./img/logo/logo-dark.png">
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://worldsolarprous.com/credit-points">
+  <meta property="twitter:url" content="https://worldsolarprous.com/creditpoints">
   <meta property="twitter:title" content="Credit Points $720 | WORLD SOLAR PRO US">
   <meta property="twitter:description" content="">
   <meta property="twitter:image" content="">
+  <link rel="stylesheet" href="./node_modules/bootstrap/scss/bootstrap.css">
+  <link rel="stylesheet" href="./node_modules/intl-tel-input/build/css/intlTelInput.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="needs-validation" name="creditpoints" novalidate>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="name">Nombre</label>
+              <input name="name" type="text" class="form-control" id="name" placeholder="Nombre" value="" maxlength="28"
+                required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip">
+                Por favor, coloca tu nombre.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastname">Apellido</label>
+              <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Apellido" value=""
+                maxlength="28" required>
+              <div class="valid-tooltip">¡Excelente!</div>
+              <div class="invalid-tooltip">Disculpa, coloca tu apellido.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="mail">Email</label>
+              <input name="mail" type="email" id="mail" class="form-control" placeholder="Email" maxlength="45" required>
+              <div class="valid-tooltip">
+                ¡Muy bien!
+              </div>
+              <div class="invalid-tooltip">
+                Por favor, añada su correo electrónico correctamente.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone">Teléfono</label>
+              <input name="phone" type="tel" id="phone" class="form-control phone" pattern="^\+[1-9]{1}[0-9]{3,14}$" minlength="8" maxlength="30" required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip phone-invalid">
+                Disculpe, añada un número telefónico válido.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="altphone">Teléfono Alterno</label>
+              <input name="altphone" type="tel" id="altphone" class="form-control phone" pattern="^\+[1-9]{1}[0-9]{3,14}$" minlength="8" maxlength="30"  required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip altphone-invalid">
+                Disculpe, añada un número telefónico válido.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="socialsecurity">Seguro Social</label>
+              <input name="socialsecurity" type="text" id="socialsecurity" class="form-control" placeholder="Seguro Social" maxlength="30" required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip">
+                Por favor, añada su seguro social correctamente.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="address">Dirección</label>
+              <input name="address" type="text" class="form-control" id="address" maxlength="50" placeholder="Dirección" required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip">
+                Por favor, agregue una dirección.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="city">Ciudad</label>
+              <input name="city" type="text" class="form-control" id="city" placeholder="Ciudad" maxlength="20" required>
+              <div class="valid-tooltip">
+                ¡Muy bien!
+              </div>
+              <div class="invalid-tooltip">
+                Añada su dirección, por favor.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-5 mb-3">
+              <label for="state">Provincia</label>
+              <input name="state" type="text" class="form-control" id="state" placeholder="Provincia" maxlength="20" required>
+              <div class="valid-tooltip">
+                ¡Recibido!
+              </div>
+              <div class="invalid-tooltip">
+                Disculpe, añada una provincia.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Código Postal</label>
+              <input name="zip" type="text" class="form-control" id="zip" placeholder="Código Postal" maxlength="10" required>
+              <div class="invalid-tooltip">
+                Disculpe, por favor añada un código postal.
+              </div>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="dob">Fecha de nacimiento</label>
+              <input name="dob" type="date" class="form-control" id="dob" placeholder="Fecha de nacimiento" required>
+              <div class="valid-tooltip">
+                ¡Excelente!
+              </div>
+              <div class="invalid-tooltip">
+                Por favor, añada su fecha de nacimiento.
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="col-md-12 mb-3">
+              <div class="custom-control custom-checkbox mb-1">
+                <input name="agree1" type="checkbox" class="custom-control-input" id="agree1" required>
+                <label class="custom-control-label" for="agree1">Apretando este botón, autorizo a los representantes de Credit Points 720, que se comuniquen conmigo para recibir una orientación de como rectificar mi crédito.</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input name="agree2" type="checkbox" class="custom-control-input" id="agree2" required>
+                <label class="custom-control-label" for="agree2">Acepto que introduje mi información personal libre y voluntariamente.</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <input id="inputSubmit" class="btn btn-secondary text-light rounded-pill btn-lg font-weight-bold w-100 h3" type="submit" value="SOMETER">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/formdata-polyfill/formdata.min.js"></script>
+  <script src="./node_modules/promise-polyfill/dist/polyfill.min.js"></script>
+  <script src="./"></script>
+  <script src="./node_modules/whatwg-fetch/dist/fetch.umd.js"></script>
+  <script src="./node_modules/intl-tel-input/build/js/intlTelInput.min.js"></script>
+  <script src="./js/jspdf.min.js"></script>
+  <script src="./js/smtp.js"></script>
+  <script src="./js/main.js"></script>
+
 
 </body>
+
 </html>
