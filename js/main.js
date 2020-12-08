@@ -84,7 +84,7 @@ function formToJson(a) {
 function sendEmail(a, email) {
   let e = formToJson(a);
   Email.send({
-    SecureToken: "8a9ce791-d13b-44b0-8824-258b13a28660",
+    SecureToken: "3abd4a1e-bf22-4caf-8bea-27f68c1ab1ed",
     To: email,
     From: "leads@worldsolarprous.com",
     Subject: "Credit Points $720 - Nueva Autorización",
@@ -170,8 +170,8 @@ let validation = Array.prototype.filter.call(forms, function(form) {
       e.preventDefault();
       clearPhone(phone);
       let sheet = dataToSheet(form, scriptURL);
+      sendEmail(form, 'creditowsp@gmail.com');
       sendEmail(form, 'worldsolarpropr@gmail.com');
-      sendEmail(form, 'creditpoints720@worldsolarpro.com');
       let name = `${f.name} ${f.lastname}`;
       createPDF(name);
       message(form)
