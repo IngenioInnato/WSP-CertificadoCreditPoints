@@ -102,7 +102,7 @@
             </div>
             <div class="col-lg-6 mb-3">
               <label for="phone">Teléfono</label>
-              <input name="phone" type="tel" id="phone" class="form-control form-control-lg phone" pattern="^\+[1-9]{1}[0-9]{3,14}$"
+              <input autocomplete="nope" name="phone" type="tel" id="phone" class="form-control form-control-lg phone" pattern="^\+[1-9]{1}[0-9]{3,14}$"
                 minlength="8" maxlength="30" required>
               <div class="valid-tooltip">
                 ¡Excelente!
@@ -115,7 +115,7 @@
 
           <div class="form-row">
             <div class="col-lg-6 mb-3">
-              <label for="altphone">Teléfono Alterno</label>
+              <label autocomplete="nope" for="altphone">Teléfono Alterno</label>
               <input name="altphone" type="tel" id="altphone" class="form-control form-control-lg phone"
                 pattern="^\+[1-9]{1}[0-9]{3,14}$" minlength="8" maxlength="30" required>
               <div class="valid-tooltip">
