@@ -87,31 +87,23 @@ function sendEmail(a, email) {
     SecureToken: "3abd4a1e-bf22-4caf-8bea-27f68c1ab1ed",
     To: email,
     From: "leads@worldsolarprous.com",
-    Subject: "Credit Points $720 - Nueva Autorización",
+    Subject: "Evento 18 / 09 - Nueva Participante",
     Body: `
     <h1>Datos del usuario</h1>
     <p>Nombre: ${e.name}. <br>
-    <p>Nombre: ${e.lastname}. <br>
     Email: ${e.mail}. <br>
     Teléfono: ${e.phone}. <br>
-    Teléfono Alterno: ${e.altphone}. <br>
-    Dirección: ${e.address}. <br>
+    Estado: ${e.address}. <br>
     Ciudad: ${e.city}. <br>
-    Provincia: ${e.state}. <br>
-    Código Postal: ${e.zip}. <br>
-    Seguro Social: ${e.socialsecurity}. <br>
-    Fecha de nacimiento: ${e.dob}. <br>
-    Fue añadido en <a href="https://docs.google.com/spreadsheets/d/1eUP9YnX7nwe2x5CT5BAaMmcRC9gBR1ULboFaQzKEPS4/edit?usp=sharing">Google Sheet</a>. <br>
+    Fue añadido en <a href="https://docs.google.com/spreadsheets/d/1-mgA6Cc39HL8OW6etR0VkVj3K_KAwEwKjTo_IJ_AzEU/edit?usp=sharing">Google Sheet</a>. <br>
     </p>
-    `
-  }).then(
-    message => {
-        console.log("Mensaje Enviado Correctamente " + message)
-        console.log(e)
-      }
-    ).catch(
-      message => console.log("Error: " + message)
-    );
+    `,
+  })
+    .then((message) => {
+      console.log("Mensaje Enviado Correctamente " + message);
+      console.log(e);
+    })
+    .catch((message) => console.log("Error: " + message));
 }
 // END EMAIL
 
